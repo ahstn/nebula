@@ -12,7 +12,8 @@
               <v-card class="overrides">
                 <v-card-text class="px-4 py-0">
                   <span class="font-weight-medium">Overrides:</span>
-                  <v-checkbox v-model="checkbox" label="Image" class="ma-0"></v-checkbox>
+                  <v-checkbox
+                    v-model="item.overrides.image" label="Image" class="ma-0" />
                 </v-card-text>
               </v-card>
             </v-expansion-panel-content>
@@ -31,7 +32,8 @@
               <v-card class="overrides">
                 <v-card-text class="px-4 py-0">
                   <span class="font-weight-medium">Overrides:</span>
-                  <v-checkbox v-model="checkbox" label="Image" class="ma-0"></v-checkbox>
+                  <v-checkbox
+                    v-model="item.overrides.image" label="Image" class="ma-0" />
                 </v-card-text>
               </v-card>
             </v-expansion-panel-content>
@@ -80,6 +82,9 @@ let id = 1;
 </script>
 
 <style lang="stylus">
+  .v-expansion-panel>div
+    width: 100%
+
   .overrides
     .v-label
       font-size: 14px
