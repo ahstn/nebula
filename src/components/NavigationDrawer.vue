@@ -1,6 +1,5 @@
 <template>
   <v-navigation-drawer
-      v-model="drawer"
       fixed
       clipped
       class="grey lighten-4"
