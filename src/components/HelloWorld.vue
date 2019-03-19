@@ -1,34 +1,33 @@
 <template>
   <v-container>
-    <v-layout
-      text-xs-center
-      wrap
-    >
-      <v-expansion-panel class="ma-2 py-2">
-        <draggable :list="apps" group="apps" class="mx-4">
-          <v-expansion-panel-content v-for="(item, index) in apps" :key="index" class="elevation-1">
-           <template v-slot:header>
-              <div>{{ item.name }}</div>
-            </template>
-            <v-card>
-              <v-card-text>Lorem ipsum dolor sit amet</v-card-text>
-            </v-card>
-          </v-expansion-panel-content>
-        </draggable>
+    <v-layout>
+      <v-flex xs6>
+        <v-expansion-panel class="ma-2 py-3 elevation-0">
+          <draggable :list="apps" group="apps" class="mx-4">
+            <v-expansion-panel-content v-for="(item, index) in apps" :key="index" class="elevation-1">
+            <template v-slot:header>
+                <div>{{ item.name }}</div>
+              </template>
+              <v-card>
+                <v-card-text>Lorem ipsum dolor sit amet</v-card-text>
+              </v-card>
+            </v-expansion-panel-content>
+          </draggable>
 
-        <draggable :list="bundle" group="apps" class="mx-4">
-          <v-expansion-panel-content v-for="(item, index) in bundle" :key="index" class="elevation-1">
-           <template v-slot:header>
-              <div>{{ item.name }}</div>
-            </template>
-            <v-card>
-              <v-card-text>Lorem ipsum dolor sit amet</v-card-text>
-            </v-card>
-          </v-expansion-panel-content>
-        </draggable>
-      </v-expansion-panel>
+          <draggable :list="bundle" group="apps" class="mx-4">
+            <v-expansion-panel-content v-for="(item, index) in bundle" :key="index" class="elevation-1">
+            <template v-slot:header>
+                <div>{{ item.name }}</div>
+              </template>
+              <v-card>
+                <v-card-text>Lorem ipsum dolor sit amet</v-card-text>
+              </v-card>
+            </v-expansion-panel-content>
+          </draggable>
+        </v-expansion-panel>
+      </v-flex>
 
-      <Displayer class="col-3" :value="bundle" title="YAML" />
+      <Displayer class="ma-2" :value="bundle" title="YAML" />
     </v-layout>
   </v-container>
 </template>
