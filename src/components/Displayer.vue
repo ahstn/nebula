@@ -30,6 +30,15 @@ export default {
         yaml = yaml.concat('\n  - ', element.name)
       });
 
+      yaml = yaml.concat('\n\nimages:')
+      this.value.forEach((element) => {
+        if (element.overrides.image) {
+          yaml = yaml.concat('\n  - name: ahstn/', element.name)
+          yaml = yaml.concat('\n    newName: ahstn/', element.name)
+          yaml = yaml.concat('\n    newTag: 3.6')
+        }
+      });
+
       return yaml
     }
   }

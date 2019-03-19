@@ -59,15 +59,15 @@ let id = 1;
     data: () => ({
       enabled: true,
       apps: [
-        { name: "auth", id: 0 },
-        { name: "billing", id: 1 },
-        { name: "payments", id: 2 },
-        { name: "processor", id: 3 },
-        { name: "membership", id: 4 },
-        { name: "subscriber", id: 5 }
+        { name: "auth", id: 0, overrides: { image: true } },
+        { name: "billing", id: 1, overrides: { image: false } },
+        { name: "payments", id: 2, overrides: { image: false } },
+        { name: "processor", id: 3, overrides: { image: false } },
+        { name: "membership", id: 4, overrides: { image: false } },
+        { name: "subscriber", id: 5, overrides: { image: false } }
       ],
       bundle: [
-        { name: "auth", id: 0 }
+        { name: "auth", id: 0, overrides: { image: true } }
       ],
       dragging: false
     }),
