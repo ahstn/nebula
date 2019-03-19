@@ -9,8 +9,11 @@
             <template v-slot:header>
                 <div>{{ item.name }}</div>
               </template>
-              <v-card>
-                <v-card-text>Lorem ipsum dolor sit amet</v-card-text>
+              <v-card class="overrides">
+                <v-card-text class="px-4 py-0">
+                  <span class="font-weight-medium">Overrides:</span>
+                  <v-checkbox v-model="checkbox" label="Image" class="ma-0"></v-checkbox>
+                </v-card-text>
               </v-card>
             </v-expansion-panel-content>
           </draggable>
@@ -25,8 +28,11 @@
             <template v-slot:header>
                 <div>{{ item.name }}</div>
               </template>
-              <v-card>
-                <v-card-text>Lorem ipsum dolor sit amet</v-card-text>
+              <v-card class="overrides">
+                <v-card-text class="px-4 py-0">
+                  <span class="font-weight-medium">Overrides:</span>
+                  <v-checkbox v-model="checkbox" label="Image" class="ma-0"></v-checkbox>
+                </v-card-text>
               </v-card>
             </v-expansion-panel-content>
           </draggable>
@@ -73,6 +79,10 @@ let id = 1;
   }
 </script>
 
-<style>
-
+<style lang="stylus">
+  .overrides
+    .v-label
+      font-size: 14px
+    .v-input__slot
+      margin-bottom: none!important
 </style>
