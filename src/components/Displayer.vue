@@ -1,7 +1,12 @@
 <template>
   <div>
     <h3>{{ title }}</h3>
-    <pre class="grey pa-3 ma-1 lighten-3">{{ valueString }}</pre>
+    <pre class="grey pa-3 ma-1 lighten-3">
+  apiVersion: apps/v1
+  kind: Kustomization
+
+  {{ buildYAML }}
+    </pre>
   </div>
 </template>
 <script>
@@ -18,8 +23,14 @@ const props = {
 export default {
   props,
   computed: {
-    valueString() {
-      return JSON.stringify(this.value, null, 2);
+    buildYAML() {
+      let yaml = "resources:"
+
+      this.value.forEach((element) => {
+        yaml = yaml.concat('\n  - ', element.name)
+      });
+
+      return yaml
     }
   }
 };

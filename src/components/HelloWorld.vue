@@ -4,7 +4,7 @@
       <v-flex xs6>
         <v-expansion-panel class="ma-2 py-3 elevation-0">
           <draggable :list="apps" group="apps" class="mx-4">
-            <v-expansion-panel-content v-for="(item, index) in apps" :key="index" class="elevation-1">
+            <v-expansion-panel-content v-for="(item, index) in apps" :key="index" class="elevation-2">
             <template v-slot:header>
                 <div>{{ item.name }}</div>
               </template>
